@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Language Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="translator-box">
+
+        <h1>🌍 Language Translator</h1>
+
+        <!-- User Input -->
+        <textarea
+            id="textInput"
+            placeholder="Enter text to translate..."
+        ></textarea>
+
+        <!-- Language Selection -->
+        <div class="language-row">
+
+            <select id="sourceLanguage">
+                <option value="en">English</option>
+                <option value="te">Telugu</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="bn">Bengali</option>
+                <option value="mr">Marathi</option>
+                <option value="gu">Gujarati</option>
+                <option value="pa">Punjabi</option>
+                <option value="ur">Urdu</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh-CN">Chinese</option>
+                <option value="ar">Arabic</option>
+            </select>
+
+            <span class="arrow">➡️</span>
+
+            <select id="targetLanguage">
+                <option value="te">Telugu</option>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="bn">Bengali</option>
+                <option value="mr">Marathi</option>
+                <option value="gu">Gujarati</option>
+                <option value="pa">Punjabi</option>
+                <option value="ur">Urdu</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh-CN">Chinese</option>
+                <option value="ar">Arabic</option>
+            </select>
+
+        </div>
+
+        <!-- Translate Button -->
+        <button id="translateButton">
+            Translate
+        </button>
+
+        <!-- Result -->
+        <div class="result-section">
+
+            <h3>Translated Text</h3>
+
+            <p id="translatedText">
+                Translation will appear here...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #6a11cb,
+        #2575fc,
+        #ff6fd8
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main box */
+body > div {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 30px;
+    border-radius: 20px;
+
+    width: 90%;
+    max-width: 600px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+h1 {
+    color: #5e35b1;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Text box */
+textarea {
+    width: 100%;
+    height: 130px;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    border: 2px solid #7e57c2;
+    border-radius: 12px;
+
+    font-size: 16px;
+    outline: none;
+
+    background: #f8f5ff;
+}
+
+textarea:focus {
+    border-color: #ff4081;
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.3);
+}
+
+/* Dropdowns */
+select {
+    padding: 11px;
+    margin-top: 15px;
+
+    border: 2px solid #42a5f5;
+    border-radius: 10px;
+
+    background: #e3f2fd;
+    color: #333;
+
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Arrow */
+select + span,
+span {
+    color: #ff4081;
+    font-size: 22px;
+}
+
+/* Translate button */
+button {
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ff4081,
+        #7c4dff
+    );
+
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(124, 77, 255, 0.35);
+}
+
+/* Result heading */
+h3 {
+    color: #6a1b9a;
+    margin-top: 25px;
+}
+
+/* Translation result */
+#resultText {
+    padding: 15px;
+
+    min-height: 45px;
+
+    background: linear-gradient(
+        135deg,
+        #fff3e0,
+        #fce4ec
+    );
+
+    border-left: 5px solid #ff4081;
+    border-radius: 10px;
+
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+}
